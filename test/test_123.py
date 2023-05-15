@@ -1,6 +1,11 @@
+# файл test/ test_*.py
+# файл test/ *_test.py
 
-import unittest
+from io import StringIO
+from unittest.mock import patch
+from src.example import hello_world
 
-class TestHelloWorld(unittest.TestCase):
-    def test_hello_world(self):
-        
+def test_hello_world(capsys):
+    hello_world()
+    captured = capsys.readouterr()
+    assert captured.out == "Hello, World!\n"
