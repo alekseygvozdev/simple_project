@@ -3,7 +3,7 @@
 
 from io import StringIO
 from unittest.mock import patch
-from src.example import hello_world
+from src.simple import hello_world
 
 def test_hello_world(capsys):
     hello_world()
